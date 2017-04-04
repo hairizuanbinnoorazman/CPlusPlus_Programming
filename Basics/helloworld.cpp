@@ -1,4 +1,4 @@
-// Test
+// Hello World Example
 #include "iostream"
 
 using namespace std;
