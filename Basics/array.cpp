@@ -33,6 +33,11 @@ int main(){
     *(pv + 3) = 14;
     cout << "Value of *pv: " << *pv << endl;
 
+    // Causes warning
+    // for(int i : v){
+    //  cout << i << endl;
+    // }
+
     // C++ raw arrays don't store their size like Java arrays do; you need to keep track of that separately. 
     // A better strategy might be to use container classes (such as std::vector) instead of raw arrays.
 
