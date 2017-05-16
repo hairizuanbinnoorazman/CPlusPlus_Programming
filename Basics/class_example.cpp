@@ -54,5 +54,18 @@ int main(){
   student1.setGradDate("2017-01-01");
 
   student1.print();
+
+  // Using references
+  cout << "Manipulating student 1 records via references" << endl;
+  Student* student2 = &student1;
+  cout << "Print student 2" << endl;
+  student2->print();
+  student2->setId(45627);
+  cout << "Print student 2" << endl;
+  student2->print();
+
+  cout << "Print student 1" << endl;
+  student1.print();
+
   return 0;
 }
