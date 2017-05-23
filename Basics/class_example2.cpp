@@ -2,6 +2,14 @@
 #include <string>
 using namespace std;
 
+/*
+This tutorial is to cover cases of the following concepts:
+- Constructors
+- Overloaded constructors
+- Default values for functions
+- Initialization lists
+*/
+
 class Human{
 private:
 	string Name;
@@ -14,11 +22,25 @@ public:
 		cout << "New instance of Human" << endl;
 	}
 
+	Human(string HumanName){
+		Age = 0;
+		Name = HumanName;
+		cout << "New instance of Human - via secondary constructor" << endl;
+	}
+
+	// Initialization lists
+	// This is only for constructiors; doesn't work on functions
+	Human(int HumanAge, string HumanName)
+		:Name(HumanName), Age(HumanAge){
+			cout << "Initialization lists" << endl;
+		}
+
 	void setName(string HumanName){
 		Name = HumanName;
 	}
 
-	void setAge(int HumanAge){
+	// Set default values for this function
+	void setAge(int HumanAge=18){
 		Age = HumanAge;
 	}
 
@@ -29,6 +51,8 @@ public:
 };
 
 int main(){
+	cout << "Demonstrate constructors";
+
 	Human FirstMan;
 	FirstMan.setName("Test1");
 	FirstMan.setAge(123);
@@ -37,4 +61,17 @@ int main(){
 
 	FirstMan.introduceSelf();
 	SuperMan.introduceSelf();
+
+	// Introduce new line to cover
+	cout << endl;
+
+	cout << "Demonstrate Overloaded constructors" << endl;
+
+	Human SecondMan(15, "second man maybe");
+	SecondMan.introduceSelf();
+	cout << "Demonstrate functions with default values" << endl;
+	SecondMan.setAge();
+	SecondMan.introduceSelf();
+
+	return 0;
 }
