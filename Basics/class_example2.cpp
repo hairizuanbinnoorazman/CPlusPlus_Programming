@@ -73,5 +73,17 @@ int main(){
 	SecondMan.setAge();
 	SecondMan.introduceSelf();
 
+	cout << &SecondMan << endl;
+
+	cout << "Additional exercises on pointers." << endl;
+
+	char testChar = 'a';
+	char * testChar2 = new char[4];
+	//testChar2[0] = 'a';
+	//testChar2[1] = 'b';
+	cout << testChar << endl;
+	cout << testChar2 << endl;
+	cout << &testChar2 << endl;
+
 	return 0;
 }
