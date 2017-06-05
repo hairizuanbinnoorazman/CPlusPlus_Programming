@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <assert.h>
 using namespace std;
 
 #define ARRAY_LENGTH 25
@@ -16,10 +17,16 @@ int main(){
 	cout << "Enter a radius: " << endl;
 	MY_DOUBLE radius = 0.0;
 	cin >> radius;
+
+	// Ensure that the radius is >= 5 else it will break
+	assert(radius>=5);
+
 	cout << "Area is: " << PI * radius * radius << endl;
 
 	string favouriteDish = FAV_DISH;
 	cout << "My ultimate dish is: " << favouriteDish << endl;
+
+
 
 	return 0;
 }
